@@ -8,6 +8,7 @@ import LenderCard from '@/components/LenderCard';
 import LenderDetails from '@/components/LenderDetails';
 import SearchFilters from '@/components/SearchFilters';
 import StatsOverview from '@/components/StatsOverview';
+import PersonalizedMatches from '@/components/PersonalizedMatches';
 import { toast } from 'sonner';
 import { useAuth } from '@/hooks/useAuth';
 
@@ -104,6 +105,13 @@ const Index = () => {
             )}
           </div>
         </div>
+
+        {/* Personalized Matches for Authenticated Users */}
+        {user && (
+          <div className="mb-12">
+            <PersonalizedMatches />
+          </div>
+        )}
 
         {/* Stats Overview */}
         <StatsOverview lenders={mockLenders} />
