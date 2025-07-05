@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -37,6 +36,16 @@ const PersonalizedMatches = () => {
         return;
       }
 
+      // Helper function to ensure credit score is valid
+      const getCreditScoreEstimate = (score: string | null): 'excellent' | 'good' | 'fair' | 'poor' => {
+        if (!score) return 'fair';
+        const normalizedScore = score.toLowerCase();
+        if (['excellent', 'good', 'fair', 'poor'].includes(normalizedScore)) {
+          return normalizedScore as 'excellent' | 'good' | 'fair' | 'poor';
+        }
+        return 'fair'; // Default fallback
+      };
+
       const profile: UserProfile = {
         user_id: data.user_id,
         avg_monthly_income: data.avg_monthly_income || 0,
@@ -44,7 +53,7 @@ const PersonalizedMatches = () => {
         employer: data.employer || '',
         residence_state: data.residence_state || '',
         loan_budget: data.loan_budget || 0,
-        credit_score_estimate: data.credit_score_estimate || 'fair',
+        credit_score_estimate: getCreditScoreEstimate(data.credit_score_estimate),
         employment_status: data.employment_status || '',
         connected_at: data.connected_at || ''
       };
