@@ -1,6 +1,7 @@
 
 import { useState, useMemo } from 'react';
-import { Database } from 'lucide-react';
+import { Database, User, CreditCard } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { mockLenders } from '@/data/mockLenders';
 import { Lender } from '@/types/lender';
 import LenderCard from '@/components/LenderCard';
@@ -8,8 +9,10 @@ import LenderDetails from '@/components/LenderDetails';
 import SearchFilters from '@/components/SearchFilters';
 import StatsOverview from '@/components/StatsOverview';
 import { toast } from 'sonner';
+import { useAuth } from '@/hooks/useAuth';
 
 const Index = () => {
+  const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [aprFilter, setAprFilter] = useState('all');
@@ -66,13 +69,40 @@ const Index = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Qualifi AI Auto Loan Research Platform
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <CreditCard className="w-10 h-10 text-blue-600" />
+            <h1 className="text-4xl font-bold text-gray-900">
+              Qualifi AI Auto Loan Research Platform
+            </h1>
+          </div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
             Comprehensive auto loan data extraction and comparison platform for major US lenders. 
             Powering intelligent matching and prequalification workflows.
           </p>
+          
+          {/* Auth Actions */}
+          <div className="flex justify-center gap-4">
+            {user ? (
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 text-green-600">
+                  <User className="w-5 h-5" />
+                  <span className="font-medium">{user.email}</span>
+                </div>
+                <Button asChild>
+                  <a href="/profile">View Profile</a>
+                </Button>
+              </div>
+            ) : (
+              <div className="space-x-4">
+                <Button asChild>
+                  <a href="/auth">Get Started</a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="/auth">Sign In</a>
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Stats Overview */}

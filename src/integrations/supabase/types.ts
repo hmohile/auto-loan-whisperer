@@ -9,7 +9,72 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      user_profiles: {
+        Row: {
+          account_balance: number | null
+          avg_monthly_income: number | null
+          bank_name: string | null
+          connected_at: string | null
+          connection_method: string | null
+          consent_given: boolean | null
+          created_at: string | null
+          credit_score_estimate: string | null
+          data_source: string | null
+          direct_deposit_detected: boolean | null
+          employer: string | null
+          employment_status: string | null
+          id: string
+          loan_budget: number | null
+          monthly_expenses: number | null
+          residence_state: string | null
+          status: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          account_balance?: number | null
+          avg_monthly_income?: number | null
+          bank_name?: string | null
+          connected_at?: string | null
+          connection_method?: string | null
+          consent_given?: boolean | null
+          created_at?: string | null
+          credit_score_estimate?: string | null
+          data_source?: string | null
+          direct_deposit_detected?: boolean | null
+          employer?: string | null
+          employment_status?: string | null
+          id?: string
+          loan_budget?: number | null
+          monthly_expenses?: number | null
+          residence_state?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          account_balance?: number | null
+          avg_monthly_income?: number | null
+          bank_name?: string | null
+          connected_at?: string | null
+          connection_method?: string | null
+          consent_given?: boolean | null
+          created_at?: string | null
+          credit_score_estimate?: string | null
+          data_source?: string | null
+          direct_deposit_detected?: boolean | null
+          employer?: string | null
+          employment_status?: string | null
+          id?: string
+          loan_budget?: number | null
+          monthly_expenses?: number | null
+          residence_state?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
