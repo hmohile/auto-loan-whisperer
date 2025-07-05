@@ -1,5 +1,6 @@
 
 import { useState, useMemo } from 'react';
+import { Database } from 'lucide-react';
 import { mockLenders } from '@/data/mockLenders';
 import { Lender } from '@/types/lender';
 import LenderCard from '@/components/LenderCard';
