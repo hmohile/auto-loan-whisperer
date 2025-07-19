@@ -3,8 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Qualifi AI Design System - Fintech-inspired color palette */
+/* Premium Typography - Satoshi + Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://api.fonts.coollabs.io/css2?family=Satoshi:wght@400;500;600;700;800;900&display=swap');
 
+/* Qualifi AI Design System - Premium Fintech */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -37,18 +40,20 @@
 
     --radius: 0.75rem;
     
-    /* Qualifi AI Brand Colors */
-    --emerald-primary: 160 51% 49%;     /* #38A169 */
-    --slate-accent: 210 25% 26%;        /* #2D3748 */
-    --light-bg: 220 60% 99%;            /* #F7FAFC */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--emerald-primary)), hsl(var(--emerald-primary) / 0.8));
+    /* Premium Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(160 51% 49% / 0.05), hsl(0 0% 100%));
+    --gradient-emerald: linear-gradient(135deg, hsl(160 51% 49%), hsl(160 51% 45%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 60% 99%));
     
-    /* Enhanced Design System */
-    --success: var(--emerald-primary);
-    --success-foreground: 0 0% 100%;
-    --feature-bg: 0 0% 100%;
-    --feature-border: 220 13% 91%;
-    --trust-bg: 160 100% 97%;
+    /* Enhanced Colors */
+    --emerald-50: 160 100% 97%;
+    --emerald-500: 160 51% 49%;
+    --emerald-600: 160 51% 45%;
+    --slate-50: 220 60% 99%;
+    --slate-100: 220 14% 96%;
+    --slate-700: 210 25% 26%;
+    --slate-900: 222 84% 5%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -94,19 +99,31 @@
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
     letter-spacing: -0.011em;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
+  /* Premium Typography Hierarchy */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Satoshi', 'Inter', system-ui, sans-serif;
     font-weight: 700;
     letter-spacing: -0.025em;
     line-height: 1.1;
   }
 
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.035em;
+  }
+
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
   p {
-    line-height: 1.6;
+    line-height: 1.7;
     letter-spacing: -0.011em;
+    max-width: 65ch;
   }
 
   /* Smooth scrolling */
@@ -114,23 +131,18 @@
     scroll-behavior: smooth;
   }
 
-  /* Focus states */
+  /* Enhanced focus states */
   button:focus-visible, 
   a:focus-visible {
     @apply ring-2 ring-primary ring-offset-2 ring-offset-background outline-none;
   }
 }
 
-/* Custom animations for enhanced UX */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
+/* Premium Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -138,10 +150,184 @@
   }
 }
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-8px); 
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
 }
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Staggered Animation Delays */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+
+/* Premium Component Styles */
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary/90 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 ring-2 ring-primary/20 hover:ring-primary/40;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border-2 border-primary text-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-lg;
+  }
+
+  .card-premium {
+    @apply bg-gradient-to-br from-white to-slate-50 border border-slate-200/60 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/20;
+  }
+
+  .card-interactive {
+    @apply card-premium cursor-pointer hover:scale-[1.02] group;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+}
+
+/* Shimmer Loading Effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 0%,
+    hsl(var(--muted-foreground) / 0.1) 50%,
+    hsl(var(--muted)) 100%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Scroll-based Animation Classes */
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-slide-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: all 0.5s ease-out;
+}
+
+.scroll-slide-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-slide-right {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: all 0.5s ease-out;
+}
+
+.scroll-slide-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays for scroll animations */
+.scroll-stagger-1 { transition-delay: 0ms; }
+.scroll-stagger-2 { transition-delay: 100ms; }
+.scroll-stagger-3 { transition-delay: 200ms; }
+.scroll-stagger-4 { transition-delay: 300ms; }
