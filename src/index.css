@@ -40,8 +40,15 @@ All colors MUST be HSL.
     
     /* Qualifi AI Brand Colors */
     --emerald-primary: 160 84% 39%;
-    --slate-accent: 215.4 25% 26.9%;
+    --slate-accent: 210 25% 26.9%;
+    --light-bg: 210 20% 98%;
     --gradient-hero: linear-gradient(135deg, hsl(var(--emerald-primary)), hsl(var(--emerald-primary) / 0.8));
+    
+    /* Enhanced Design System */
+    --success: var(--emerald-primary);
+    --success-foreground: 0 0% 100%;
+    --feature-bg: 0 0% 100%;
+    --feature-border: 220 13% 91%;
 
     --sidebar-background: 0 0% 98%;
 
