@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, XCircle, Brain, FileText, Shield, Target, MessageSquare, TrendingUp, User, CreditCard, Zap, Eye, BarChart3, ArrowRight, Mail, DollarSign, Clock, Users, Lock, Heart, Bell } from "lucide-react";
+import { CheckCircle, XCircle, Brain, FileText, Shield, Target, MessageSquare, TrendingUp, User, CreditCard, Zap, Eye, BarChart3, ArrowRight, Mail, DollarSign, Clock, Users, Lock, Heart, Bell, Bot, Check, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import qualifiLogo from "@/assets/qualifi-logo.png";
 import dashboardMockup from "@/assets/dashboard-mockup.png";
 import { useState } from "react";
@@ -11,6 +12,7 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const handleWaitlistSignup = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,8 +48,8 @@ const Landing = () => {
               </Button>
             </Link>
             <Link to="/auth">
-              <Button className="bg-emerald-primary hover:bg-emerald-primary/90 text-white font-medium px-6">
-                Sign Up
+              <Button className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl ring-2 ring-emerald-500 ring-opacity-20">
+                Get Started
               </Button>
             </Link>
           </div>
@@ -111,8 +113,8 @@ const Landing = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
               <CardHeader className="space-y-4">
-                <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-2xl group-hover:bg-emerald-200 transition-colors">
-                  <FileText className="h-8 w-8 text-emerald-600" />
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl group-hover:bg-emerald-600 transition-colors">
+                  <FileText className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl text-slate-accent font-semibold">One Form for All Lenders</CardTitle>
               </CardHeader>
@@ -125,8 +127,8 @@ const Landing = () => {
 
             <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
               <CardHeader className="space-y-4">
-                <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl group-hover:bg-blue-200 transition-colors">
-                  <Eye className="h-8 w-8 text-blue-600" />
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl group-hover:bg-emerald-600 transition-colors">
+                  <Eye className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl text-slate-accent font-semibold">Soft Credit Pre-Approval</CardTitle>
               </CardHeader>
@@ -139,8 +141,8 @@ const Landing = () => {
 
             <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
               <CardHeader className="space-y-4">
-                <div className="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-2xl group-hover:bg-purple-200 transition-colors">
-                  <Brain className="h-8 w-8 text-purple-600" />
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl group-hover:bg-emerald-600 transition-colors">
+                  <Brain className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl text-slate-accent font-semibold">AI-Powered Lender Match</CardTitle>
               </CardHeader>
@@ -153,8 +155,8 @@ const Landing = () => {
 
             <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
               <CardHeader className="space-y-4">
-                <div className="flex items-center justify-center w-16 h-16 bg-orange-100 rounded-2xl group-hover:bg-orange-200 transition-colors">
-                  <BarChart3 className="h-8 w-8 text-orange-600" />
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl group-hover:bg-emerald-600 transition-colors">
+                  <BarChart3 className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl text-slate-accent font-semibold">Compare & Apply Confidently</CardTitle>
               </CardHeader>
@@ -167,8 +169,8 @@ const Landing = () => {
 
             <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
               <CardHeader className="space-y-4">
-                <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-2xl group-hover:bg-green-200 transition-colors">
-                  <Shield className="h-8 w-8 text-green-600" />
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl group-hover:bg-emerald-600 transition-colors">
+                  <Shield className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl text-slate-accent font-semibold">Always Free for Borrowers</CardTitle>
               </CardHeader>
@@ -181,8 +183,8 @@ const Landing = () => {
 
             <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
               <CardHeader className="space-y-4">
-                <div className="flex items-center justify-center w-16 h-16 bg-teal-100 rounded-2xl group-hover:bg-teal-200 transition-colors">
-                  <MessageSquare className="h-8 w-8 text-teal-600" />
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl group-hover:bg-emerald-600 transition-colors">
+                  <MessageSquare className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl text-slate-accent font-semibold">AI Copilot Assistant</CardTitle>
               </CardHeader>
@@ -219,28 +221,28 @@ const Landing = () => {
                 </div>
               </div>
               
-              <div className="p-6 bg-red-50/80">
-                <h3 className="font-semibold text-lg mb-4 text-red-800">Traditional Shopping</h3>
+              <div className="p-6 bg-slate-100/80">
+                <h3 className="font-semibold text-lg mb-4 text-slate-800">Traditional Shopping</h3>
                 <div className="space-y-4">
                   <div className="py-3 border-b flex items-center">
-                    <XCircle className="h-5 w-5 text-red-600 mr-2" />
-                    <span className="text-red-700">Yes, over and over</span>
+                    <X className="h-5 w-5 text-slate-500 mr-2" />
+                    <span className="text-slate-700">Yes, over and over</span>
                   </div>
                   <div className="py-3 border-b flex items-center">
-                    <XCircle className="h-5 w-5 text-red-600 mr-2" />
-                    <span className="text-red-700">Hurts your credit</span>
+                    <X className="h-5 w-5 text-slate-500 mr-2" />
+                    <span className="text-slate-700">Hurts your credit</span>
                   </div>
                   <div className="py-3 border-b flex items-center">
-                    <XCircle className="h-5 w-5 text-red-600 mr-2" />
-                    <span className="text-red-700">Limited options</span>
+                    <X className="h-5 w-5 text-slate-500 mr-2" />
+                    <span className="text-slate-700">Limited options</span>
                   </div>
                   <div className="py-3 border-b flex items-center">
-                    <XCircle className="h-5 w-5 text-red-600 mr-2" />
-                    <span className="text-red-700">Scattered everywhere</span>
+                    <X className="h-5 w-5 text-slate-500 mr-2" />
+                    <span className="text-slate-700">Scattered everywhere</span>
                   </div>
                   <div className="py-3 flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-                    <span className="text-green-700">Yes</span>
+                    <Check className="h-5 w-5 text-emerald-600 mr-2" />
+                    <span className="text-emerald-700">Yes</span>
                   </div>
                 </div>
               </div>
@@ -286,33 +288,33 @@ const Landing = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="bg-emerald-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <User className="h-8 w-8 text-emerald-primary" />
+            <div className="group text-center p-6 bg-white rounded-xl shadow-sm border hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <User className="h-8 w-8 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-2 text-slate-accent">Answer a Few Questions</h3>
               <p className="text-muted-foreground">Vehicle, loan need, income, location, and basic info.</p>
             </div>
 
-            <div className="text-center">
-              <div className="bg-emerald-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CreditCard className="h-8 w-8 text-emerald-primary" />
+            <div className="group text-center p-6 bg-white rounded-xl shadow-sm border hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <CreditCard className="h-8 w-8 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-2 text-slate-accent">Soft Credit Check</h3>
               <p className="text-muted-foreground">With your consent - used to match you to eligible lenders.</p>
             </div>
 
-            <div className="text-center">
-              <div className="bg-emerald-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-8 w-8 text-emerald-primary" />
+            <div className="group text-center p-6 bg-white rounded-xl shadow-sm border hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Zap className="h-8 w-8 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-2 text-slate-accent">Get Pre-Approved Offers</h3>
               <p className="text-muted-foreground">Ranked by APR, monthly payment, and match fit - instantly.</p>
             </div>
 
-            <div className="text-center">
-              <div className="bg-emerald-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="h-8 w-8 text-emerald-primary" />
+            <div className="group text-center p-6 bg-white rounded-xl shadow-sm border hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Target className="h-8 w-8 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-2 text-slate-accent">Compare & Choose</h3>
               <p className="text-muted-foreground">Pick what suits you - all options in one place.</p>
@@ -329,30 +331,30 @@ const Landing = () => {
             We don't charge you anything. Lenders pay us a small success fee (10–30 bps) only when a funded loan is closed.
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="bg-white border-emerald-200 hover:shadow-lg transition-all p-6">
-              <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mx-auto mb-4">
-                <DollarSign className="h-8 w-8 text-emerald-600" />
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="group text-center p-8 bg-white rounded-xl shadow-sm border hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <DollarSign className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-slate-accent">Zero Fees</h3>
-              <p className="text-muted-foreground">No upfront costs, no hidden charges, no surprises ever.</p>
-            </Card>
+              <h3 className="text-xl font-semibold mb-3 text-slate-accent">Zero Fees</h3>
+              <p className="text-muted-foreground">No upfront costs, no hidden charges, no surprises ever - completely free forever</p>
+            </div>
             
-            <Card className="bg-white border-emerald-200 hover:shadow-lg transition-all p-6">
-              <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4">
-                <Heart className="h-8 w-8 text-blue-600" />
+            <div className="group text-center p-8 bg-white rounded-xl shadow-sm border hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Shield className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-slate-accent">No Hard Pulls</h3>
-              <p className="text-muted-foreground">Protect your credit score with soft inquiries only.</p>
-            </Card>
+              <h3 className="text-xl font-semibold mb-3 text-slate-accent">No Hard Pulls</h3>
+              <p className="text-muted-foreground">Protect your credit score with soft inquiries only - no damage to your credit</p>
+            </div>
             
-            <Card className="bg-white border-emerald-200 hover:shadow-lg transition-all p-6">
-              <div className="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4">
-                <Clock className="h-8 w-8 text-purple-600" />
+            <div className="group text-center p-8 bg-white rounded-xl shadow-sm border hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Clock className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-slate-accent">Cancel Anytime</h3>
-              <p className="text-muted-foreground">No obligations, no contracts, complete freedom.</p>
-            </Card>
+              <h3 className="text-xl font-semibold mb-3 text-slate-accent">Cancel Anytime</h3>
+              <p className="text-muted-foreground">No obligations, no contracts, complete freedom - explore at your own pace</p>
+            </div>
           </div>
 
           <div className="bg-emerald-50 rounded-2xl p-8 mb-12">
@@ -421,22 +423,28 @@ const Landing = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="bg-muted/50 p-3 rounded-lg">
-                    <p className="text-sm font-medium text-slate-accent">You:</p>
-                    <p className="text-sm text-muted-foreground">Which one has the lowest APR?</p>
+                    <p className="text-sm font-medium text-slate-accent flex items-center gap-2">
+                      <User className="h-4 w-4" />
+                      You:
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">I have a 720 credit score and need $25k for a new Toyota Camry. Which lender should I choose and what's my expected monthly payment?</p>
                   </div>
                   <div className="bg-emerald-50 p-3 rounded-lg border border-emerald-200/50">
                     <p className="text-sm font-medium text-emerald-primary flex items-center gap-1">
-                      <Brain className="h-3 w-3" />
+                      <Bot className="h-4 w-4" />
                       AI Copilot:
                     </p>
                     <p className="text-sm text-emerald-700 mt-1">
-                      Based on your profile, Capital One Auto offers the lowest APR at 5.49%. 
-                      You have a 94% match confidence with them.
+                      Perfect! With your 720 score, <strong>First National Bank</strong> offers 4.1% APR for 60 months = <strong>$461/month</strong>. They have 98% approval rate for your profile. <strong>Credit Union Plus</strong> is close at 4.3% = $467/month. Would you like me to explain the difference in total interest paid?
                     </p>
                   </div>
-                  <div className="bg-muted/50 p-3 rounded-lg">
-                    <p className="text-sm font-medium text-slate-accent">You:</p>
-                    <p className="text-sm text-muted-foreground">What about monthly payments?</p>
+                  <div className="text-center py-2">
+                    <button 
+                      onClick={() => navigate('/dashboard')}
+                      className="text-emerald-600 hover:text-emerald-700 font-medium text-sm"
+                    >
+                      Start Chatting Now →
+                    </button>
                   </div>
                 </CardContent>
               </Card>
@@ -465,13 +473,13 @@ const Landing = () => {
                     placeholder="Enter your email address" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-white text-slate-accent border-0 flex-1 h-14 text-lg placeholder:text-gray-400 rounded-xl"
+                    className="bg-white/90 text-slate-800 border-2 border-white/30 flex-1 h-14 text-lg placeholder:text-gray-500 rounded-xl shadow-sm"
                     required
                   />
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="bg-slate-accent hover:bg-slate-700 text-white h-14 px-10 text-lg font-semibold rounded-xl shadow-lg"
+                    className="bg-slate-800 hover:bg-slate-900 text-white h-14 px-10 text-lg font-semibold rounded-xl shadow-lg"
                   >
                     Get Early Access
                     <ArrowRight className="ml-2 h-5 w-5" />
