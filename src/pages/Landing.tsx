@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, XCircle, Brain, FileText, Shield, Target, MessageSquare, TrendingUp, User, CreditCard, Zap, Eye, BarChart3, ArrowRight } from "lucide-react";
+import { CheckCircle, XCircle, Brain, FileText, Shield, Target, MessageSquare, TrendingUp, User, CreditCard, Zap, Eye, BarChart3, ArrowRight, Mail, DollarSign, Clock, Users, Lock, Heart, Bell } from "lucide-react";
 import qualifiLogo from "@/assets/qualifi-logo.png";
 import dashboardMockup from "@/assets/dashboard-mockup.png";
 import { useState } from "react";
@@ -20,54 +20,63 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-light-bg">
+    <div className="min-h-screen bg-background font-['Inter',_system-ui,_sans-serif]">
       {/* Header */}
       <header className="border-b bg-white/95 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-4 py-5 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <img src={qualifiLogo} alt="Qualifi AI" className="h-8 w-8" />
-            <span className="font-bold text-xl text-slate-accent">Qualifi AI</span>
+            <img src={qualifiLogo} alt="Qualifi AI" className="h-10 w-10" />
+            <span className="font-bold text-2xl text-slate-accent">Qualifi AI</span>
           </div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+          <nav className="hidden md:flex space-x-10">
+            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               Features
             </a>
-            <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               How It Works
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               Pricing
             </a>
           </nav>
-          <Link to="/auth">
-            <Button className="bg-emerald-primary hover:bg-emerald-primary/90 text-white">
-              Get Started
-            </Button>
-          </Link>
+          <div className="flex items-center space-x-4">
+            <Link to="/auth">
+              <Button variant="ghost" className="text-slate-accent hover:text-emerald-primary font-medium">
+                Login
+              </Button>
+            </Link>
+            <Link to="/auth">
+              <Button className="bg-emerald-primary hover:bg-emerald-primary/90 text-white font-medium px-6">
+                Sign Up
+              </Button>
+            </Link>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-light-bg to-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl font-bold mb-6 leading-tight text-slate-accent">
+      <section className="py-24 px-4 bg-gradient-to-br from-emerald-50/30 to-white">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h1 className="text-6xl md:text-7xl font-bold leading-tight text-slate-accent tracking-tight">
                 Auto Loan Pre-Approvals.{" "}
-                <span className="text-emerald-primary">Powered by AI.</span>
+                <span className="text-emerald-primary bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
+                  Powered by AI.
+                </span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-2xl text-muted-foreground leading-relaxed max-w-xl">
                 One form. Pre-approvals from top lenders. All in one place — with no hard credit pull.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Link to="/auth">
-                  <Button size="lg" className="bg-emerald-primary hover:bg-emerald-primary/90 text-white text-lg px-8 py-3">
+                  <Button size="lg" className="bg-emerald-primary hover:bg-emerald-primary/90 text-white text-xl px-10 py-4 font-semibold shadow-lg hover:shadow-xl transition-all">
                     Get Pre-Approved Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-3 h-6 w-6" />
                   </Button>
                 </Link>
                 <Link to="/dashboard">
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-emerald-primary text-emerald-primary hover:bg-emerald-primary/5">
+                  <Button size="lg" variant="outline" className="text-xl px-10 py-4 border-emerald-primary text-emerald-primary hover:bg-emerald-primary/5 font-semibold">
                     See How It Works
                   </Button>
                 </Link>
@@ -75,12 +84,14 @@ const Landing = () => {
             </div>
             <div className="flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-primary/20 to-emerald-primary/10 blur-3xl"></div>
-                <img 
-                  src={dashboardMockup} 
-                  alt="Qualifi AI Dashboard" 
-                  className="relative rounded-xl shadow-2xl border border-emerald-200/50 w-full max-w-lg"
-                />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-300/20 blur-3xl transform rotate-3"></div>
+                <div className="relative bg-gradient-to-br from-white to-emerald-50/50 p-4 rounded-2xl shadow-2xl border border-emerald-200/30">
+                  <img 
+                    src={dashboardMockup} 
+                    alt="Qualifi AI Dashboard" 
+                    className="rounded-xl w-full max-w-lg filter brightness-105 contrast-105"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -88,83 +99,95 @@ const Landing = () => {
       </section>
 
       {/* Key Features Section */}
-      <section id="features" className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-slate-accent">Why Choose Qualifi AI?</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+      <section id="features" className="py-24 px-4 bg-gradient-to-b from-white to-slate-50/30">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-20 space-y-6">
+            <h2 className="text-5xl font-bold text-slate-accent">Why Choose Qualifi AI?</h2>
+            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Stop jumping between lender websites. Get all your auto loan options in one place with AI-powered matching.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-feature-border hover:shadow-lg transition-all duration-300 hover:border-emerald-primary/30 bg-feature-bg">
-              <CardHeader>
-                <FileText className="h-12 w-12 text-emerald-primary mb-4" />
-                <CardTitle className="text-slate-accent">One Form for All Lenders</CardTitle>
+            <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-2xl group-hover:bg-emerald-200 transition-colors">
+                  <FileText className="h-8 w-8 text-emerald-600" />
+                </div>
+                <CardTitle className="text-xl text-slate-accent font-semibold">One Form for All Lenders</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-muted-foreground">
-                  No more submitting the same info five times. One application gets you matched with multiple lenders.
+                <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                  No more submitting the same info five times. One application gets you matched with multiple lenders instantly.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-feature-border hover:shadow-lg transition-all duration-300 hover:border-emerald-primary/30 bg-feature-bg">
-              <CardHeader>
-                <Eye className="h-12 w-12 text-emerald-primary mb-4" />
-                <CardTitle className="text-slate-accent">Soft Credit Pre-Approval</CardTitle>
+            <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl group-hover:bg-blue-200 transition-colors">
+                  <Eye className="h-8 w-8 text-blue-600" />
+                </div>
+                <CardTitle className="text-xl text-slate-accent font-semibold">Soft Credit Pre-Approval</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-muted-foreground">
-                  See where you stand before you apply. No hard credit pulls that hurt your score.
+                <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                  See where you stand before you apply. No hard credit pulls that hurt your score or leave marks.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-feature-border hover:shadow-lg transition-all duration-300 hover:border-emerald-primary/30 bg-feature-bg">
-              <CardHeader>
-                <Brain className="h-12 w-12 text-emerald-primary mb-4" />
-                <CardTitle className="text-slate-accent">AI-Powered Lender Match</CardTitle>
+            <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-2xl group-hover:bg-purple-200 transition-colors">
+                  <Brain className="h-8 w-8 text-purple-600" />
+                </div>
+                <CardTitle className="text-xl text-slate-accent font-semibold">AI-Powered Lender Match</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-muted-foreground">
-                  Get options ranked by what's best for you. Our AI analyzes your profile for optimal matches.
+                <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                  Get options ranked by what's best for you. Our AI analyzes your profile for optimal matches and rates.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-feature-border hover:shadow-lg transition-all duration-300 hover:border-emerald-primary/30 bg-feature-bg">
-              <CardHeader>
-                <BarChart3 className="h-12 w-12 text-emerald-primary mb-4" />
-                <CardTitle className="text-slate-accent">Compare & Apply Confidently</CardTitle>
+            <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-center w-16 h-16 bg-orange-100 rounded-2xl group-hover:bg-orange-200 transition-colors">
+                  <BarChart3 className="h-8 w-8 text-orange-600" />
+                </div>
+                <CardTitle className="text-xl text-slate-accent font-semibold">Compare & Apply Confidently</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-muted-foreground">
-                  Review side-by-side comparisons, then take action with full transparency on rates and terms.
+                <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                  Review side-by-side comparisons with full transparency on rates, terms, and monthly payments.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-feature-border hover:shadow-lg transition-all duration-300 hover:border-emerald-primary/30 bg-feature-bg">
-              <CardHeader>
-                <Shield className="h-12 w-12 text-emerald-primary mb-4" />
-                <CardTitle className="text-slate-accent">Always Free for Borrowers</CardTitle>
+            <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-2xl group-hover:bg-green-200 transition-colors">
+                  <Shield className="h-8 w-8 text-green-600" />
+                </div>
+                <CardTitle className="text-xl text-slate-accent font-semibold">Always Free for Borrowers</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-muted-foreground">
-                  We're paid by lenders, not you. Zero fees, no hidden costs, cancel anytime.
+                <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                  We're paid by lenders, not you. Zero fees, no hidden costs, cancel anytime. Complete transparency.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-feature-border hover:shadow-lg transition-all duration-300 hover:border-emerald-primary/30 bg-feature-bg">
-              <CardHeader>
-                <MessageSquare className="h-12 w-12 text-emerald-primary mb-4" />
-                <CardTitle className="text-slate-accent">AI Copilot Assistant</CardTitle>
+            <Card className="border-feature-border hover:shadow-xl transition-all duration-300 hover:border-emerald-primary/40 bg-feature-bg group hover:scale-105">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-center w-16 h-16 bg-teal-100 rounded-2xl group-hover:bg-teal-200 transition-colors">
+                  <MessageSquare className="h-8 w-8 text-teal-600" />
+                </div>
+                <CardTitle className="text-xl text-slate-accent font-semibold">AI Copilot Assistant</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-muted-foreground">
+                <CardDescription className="text-base text-muted-foreground leading-relaxed">
                   Chat with our AI to understand your options and get personalized guidance throughout the process.
                 </CardDescription>
               </CardContent>
@@ -174,7 +197,7 @@ const Landing = () => {
       </section>
 
       {/* Comparison Section */}
-      <section className="py-20 px-4 bg-light-bg">
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-50/30 to-emerald-50/20">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-slate-accent">Traditional vs. Qualifi AI</h2>
@@ -253,7 +276,7 @@ const Landing = () => {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 px-4 bg-white">
+      <section id="how-it-works" className="py-24 px-4 bg-gradient-to-b from-emerald-50/20 to-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-slate-accent">How It Works</h2>
@@ -299,49 +322,94 @@ const Landing = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 px-4 bg-emerald-50/50">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-4 text-slate-accent">Always Free for Borrowers</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+      <section id="pricing" className="py-24 px-4 bg-gradient-to-b from-white to-emerald-50/30">
+        <div className="container mx-auto max-w-5xl text-center">
+          <h2 className="text-5xl font-bold mb-6 text-slate-accent">Always Free for Borrowers</h2>
+          <p className="text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
             We don't charge you anything. Lenders pay us a small success fee (10–30 bps) only when a funded loan is closed.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge className="text-lg py-2 px-6 bg-emerald-primary text-white hover:bg-emerald-primary/90">
-              ✅ Zero Fees
-            </Badge>
-            <Badge className="text-lg py-2 px-6 bg-emerald-primary text-white hover:bg-emerald-primary/90">
-              ✅ No Hard Pulls
-            </Badge>
-            <Badge className="text-lg py-2 px-6 bg-emerald-primary text-white hover:bg-emerald-primary/90">
-              ✅ Cancel Anytime
-            </Badge>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="bg-white border-emerald-200 hover:shadow-lg transition-all p-6">
+              <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mx-auto mb-4">
+                <DollarSign className="h-8 w-8 text-emerald-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-slate-accent">Zero Fees</h3>
+              <p className="text-muted-foreground">No upfront costs, no hidden charges, no surprises ever.</p>
+            </Card>
+            
+            <Card className="bg-white border-emerald-200 hover:shadow-lg transition-all p-6">
+              <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4">
+                <Heart className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-slate-accent">No Hard Pulls</h3>
+              <p className="text-muted-foreground">Protect your credit score with soft inquiries only.</p>
+            </Card>
+            
+            <Card className="bg-white border-emerald-200 hover:shadow-lg transition-all p-6">
+              <div className="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4">
+                <Clock className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-slate-accent">Cancel Anytime</h3>
+              <p className="text-muted-foreground">No obligations, no contracts, complete freedom.</p>
+            </Card>
+          </div>
+
+          <div className="bg-emerald-50 rounded-2xl p-8 mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <Users className="h-12 w-12 text-emerald-600" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-slate-accent">Trusted by Thousands</h3>
+            <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Join over 10,000+ borrowers who have found better auto loan rates through our AI-powered platform.
+            </p>
+            <div className="grid grid-cols-3 gap-6 max-w-md mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-emerald-600">4.9★</div>
+                <div className="text-sm text-muted-foreground">User Rating</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-emerald-600">$2,847</div>
+                <div className="text-sm text-muted-foreground">Avg. Savings</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-emerald-600">2 min</div>
+                <div className="text-sm text-muted-foreground">Approval Time</div>
+              </div>
+            </div>
           </div>
 
           <Link to="/auth">
-            <Button size="lg" className="bg-emerald-primary hover:bg-emerald-primary/90 text-white text-lg px-8 py-3">
+            <Button size="lg" className="bg-emerald-primary hover:bg-emerald-primary/90 text-white text-xl px-12 py-4 font-semibold shadow-lg">
               Start Your Free Pre-Approval
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
           </Link>
         </div>
       </section>
 
       {/* AI Copilot Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6 text-slate-accent">Chat with Your Loan Copilot</h2>
-              <p className="text-xl text-muted-foreground mb-8">
+      <section className="py-24 px-4 bg-gradient-to-b from-emerald-50/30 to-slate-50/20">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-5xl font-bold text-slate-accent">Chat with Your Loan Copilot</h2>
+              <p className="text-2xl text-muted-foreground leading-relaxed">
                 Our AI assistant helps you understand your pre-approvals and answer questions — so you can make the right choice.
               </p>
-              <Link to="/auth">
-                <Button size="lg" className="bg-emerald-primary hover:bg-emerald-primary/90 text-white text-lg px-8 py-3">
-                  Try the Copilot
-                  <MessageSquare className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/dashboard">
+                  <Button size="lg" className="bg-emerald-primary hover:bg-emerald-primary/90 text-white text-xl px-10 py-4 font-semibold shadow-lg">
+                    Start Chatting Now
+                    <MessageSquare className="ml-3 h-6 w-6" />
+                  </Button>
+                </Link>
+                <Link to="/auth">
+                  <Button size="lg" variant="outline" className="text-xl px-10 py-4 border-emerald-primary text-emerald-primary hover:bg-emerald-primary/5 font-semibold">
+                    Try the Copilot
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="flex justify-center">
               <Card className="bg-white border-emerald-200/50 shadow-xl max-w-md w-full">
@@ -378,76 +446,129 @@ const Landing = () => {
       </section>
 
       {/* Waitlist Section */}
-      <section className="py-20 px-4 bg-emerald-primary text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-4">Join the Waitlist</h2>
-          <p className="text-xl mb-8 opacity-90">
+      <section className="py-24 px-4 bg-gradient-to-br from-emerald-600 to-emerald-500 text-white">
+        <div className="container mx-auto max-w-5xl text-center">
+          <div className="flex items-center justify-center mb-6">
+            <Mail className="h-16 w-16 text-white/80" />
+          </div>
+          <h2 className="text-5xl font-bold mb-6">Join the Waitlist</h2>
+          <p className="text-2xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
             Be the first to try Qualifi AI and get early access to AI-powered auto loan approvals.
           </p>
           
-          <form onSubmit={handleWaitlistSignup} className="max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-white text-slate-accent border-0 flex-1 h-12 text-base"
-                required
-              />
-              <Button type="submit" variant="secondary" size="lg" className="bg-white text-emerald-primary hover:bg-gray-100 h-12 px-8">
-                Get Early Access
-              </Button>
-            </div>
-            <p className="text-sm mt-4 opacity-75">
-              No spam. No obligations. Get notified when we launch.
-            </p>
-          </form>
+          <Card className="bg-white/10 backdrop-blur-sm border-white/20 max-w-2xl mx-auto mb-8">
+            <CardContent className="p-8">
+              <form onSubmit={handleWaitlistSignup} className="space-y-6">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Input 
+                    type="email" 
+                    placeholder="Enter your email address" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-white text-slate-accent border-0 flex-1 h-14 text-lg placeholder:text-gray-400 rounded-xl"
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="bg-slate-accent hover:bg-slate-700 text-white h-14 px-10 text-lg font-semibold rounded-xl shadow-lg"
+                  >
+                    Get Early Access
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </div>
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div className="flex items-center justify-center space-x-2">
+                    <Lock className="h-4 w-4 text-white/70" />
+                    <span className="text-sm text-white/80">No spam</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <Heart className="h-4 w-4 text-white/70" />
+                    <span className="text-sm text-white/80">No obligations</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <Bell className="h-4 w-4 text-white/70" />
+                    <span className="text-sm text-white/80">Launch updates</span>
+                  </div>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+          
+          <p className="text-lg opacity-80">
+            Join <span className="font-semibold">2,500+</span> people already on the waitlist
+          </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-accent text-white py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                <img src={qualifiLogo} alt="Qualifi AI" className="h-8 w-8 brightness-0 invert" />
-                <span className="font-bold text-2xl">Qualifi AI</span>
+      <footer className="bg-slate-900 text-white py-20 px-4">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            <div className="md:col-span-2 space-y-6">
+              <div className="flex items-center space-x-3">
+                <img src={qualifiLogo} alt="Qualifi AI" className="h-12 w-12 brightness-0 invert" />
+                <span className="font-bold text-3xl">Qualifi AI</span>
               </div>
-              <p className="text-gray-300 mb-4 max-w-md">
-                AI-powered auto loan pre-approvals that connect borrowers to the best-fit lenders. Always free for borrowers.
+              <p className="text-gray-300 text-lg max-w-md leading-relaxed">
+                AI-powered auto loan pre-approvals that connect borrowers to the best-fit lenders. 
+                Smart matching, transparent rates, always free for borrowers.
               </p>
+              <div className="flex space-x-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400">10K+</div>
+                  <div className="text-sm text-gray-400">Users Served</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400">50+</div>
+                  <div className="text-sm text-gray-400">Lender Partners</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400">$50M+</div>
+                  <div className="text-sm text-gray-400">Loans Facilitated</div>
+                </div>
+              </div>
             </div>
             
-            <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">AI Copilot</a></li>
+            <div className="space-y-4">
+              <h4 className="font-semibold text-xl mb-6">Product</h4>
+              <ul className="space-y-3 text-gray-300">
+                <li><a href="#features" className="hover:text-emerald-400 transition-colors text-lg">Features</a></li>
+                <li><a href="#how-it-works" className="hover:text-emerald-400 transition-colors text-lg">How It Works</a></li>
+                <li><a href="#pricing" className="hover:text-emerald-400 transition-colors text-lg">Pricing</a></li>
+                <li><Link to="/dashboard" className="hover:text-emerald-400 transition-colors text-lg">AI Copilot</Link></li>
+                <li><Link to="/auth" className="hover:text-emerald-400 transition-colors text-lg">Get Started</Link></li>
               </ul>
             </div>
             
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+            <div className="space-y-4">
+              <h4 className="font-semibold text-xl mb-6">Company</h4>
+              <ul className="space-y-3 text-gray-300">
+                <li><a href="#" className="hover:text-emerald-400 transition-colors text-lg">About Us</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors text-lg">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors text-lg">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors text-lg">Contact Support</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors text-lg">Careers</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm">
-              © 2025 Qualifi AI Inc. All rights reserved.
-            </p>
-            <p className="text-gray-300 text-sm mt-4 md:mt-0">
-              Qualifi AI is not a lender. We help users discover auto loan options based on their profile.
-            </p>
+          <div className="border-t border-gray-700 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="flex items-center space-x-8">
+                <p className="text-gray-300 text-lg">
+                  © 2025 Qualifi AI Inc. All rights reserved.
+                </p>
+              </div>
+              <div className="text-center md:text-right">
+                <p className="text-gray-400 text-base max-w-md">
+                  Qualifi AI is not a lender. We help users discover auto loan options based on their financial profile.
+                </p>
+                <p className="text-gray-500 text-sm mt-2">
+                  All loan offers are subject to lender approval and terms.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
