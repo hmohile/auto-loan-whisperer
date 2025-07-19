@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "@/hooks/useAuth";
+import Landing from "./pages/Landing";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
@@ -43,7 +44,8 @@ const PublicRoute = ({ children }: { children: React.ReactNode }) => {
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Index />} />
+      <Route path="/" element={<Landing />} />
+      <Route path="/dashboard" element={<Index />} />
       <Route path="/auth" element={
         <PublicRoute>
           <Auth />
