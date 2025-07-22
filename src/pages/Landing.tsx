@@ -114,7 +114,7 @@ const Landing = () => {
                   </h1>
                   
                   <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl">
-                    One simple form connects you to multiple lenders for instant pre-approvals. 
+                    One simple form connects you to multiple lenders for personalized loan matches. 
                     No hard credit pulls, completely free, AI-optimized matching.
                   </p>
                 </div>
@@ -125,9 +125,9 @@ const Landing = () => {
                     <Button 
                       size="lg" 
                       className="bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 text-lg px-8 py-4"
-                      onClick={() => handleCTAClick('hero_get_preapproved')}
+                      onClick={() => handleCTAClick('hero_find_lenders')}
                     >
-                      Get Pre-Approved Now
+                      Find My Lenders
                       <ArrowRight className="ml-3 h-5 w-5" />
                     </Button>
                   </Link>
@@ -203,8 +203,8 @@ const Landing = () => {
               />
               <FeatureCard
                 icon={Eye}
-                title="Soft Credit Pre-Approval"
-                description="See where you stand before you apply. No hard credit pulls that hurt your score."
+                title="No Hard Credit Checks"
+                description="Get matched with lenders without hard pulls that hurt your credit score."
                 delay={100}
               />
               <FeatureCard
@@ -241,7 +241,7 @@ const Landing = () => {
             <div className="text-center mb-20 space-y-4">
               <h2 className="text-4xl sm:text-5xl font-bold text-slate-900">How It Works</h2>
               <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
-                Get auto loan pre-approvals in four simple steps
+                Get matched with auto lenders in four simple steps
               </p>
             </div>
 
@@ -263,15 +263,15 @@ const Landing = () => {
               <StepCard
                 icon={Zap}
                 step="03"
-                title="Get Pre-Approved"
-                description="Receive ranked offers by APR, monthly payment, and match quality - instantly."
+                title="Get Matched"
+                description="Receive ranked lender matches by APR, monthly payment, and match quality - instantly."
                 delay={200}
               />
               <StepCard
                 icon={Target}
                 step="04"
                 title="Compare & Choose"
-                description="Pick the best option for you with transparent terms and clear comparisons."
+                description="Pick the best lender for you with transparent terms and clear comparisons."
                 delay={300}
               />
             </div>
@@ -294,7 +294,7 @@ const Landing = () => {
                   <p className="text-lg text-slate-600 font-semibold">Ask questions like:</p>
                   <div className="space-y-3">
                     {[
-                      "Which offer saves me the most money long-term?",
+                      "Which lender saves me the most money long-term?",
                       "Should I choose a shorter or longer loan term?",
                       "What's the real cost difference between these APRs?",
                       "Can I negotiate a better rate with this information?"
@@ -365,7 +365,7 @@ const Landing = () => {
                       "Fill out forms repeatedly",
                       "Hurts your credit score",
                       "Limited to few lenders", 
-                      "Hard to compare offers",
+                      "Hard to compare options",
                       "Sometimes fees apply"
                     ].map((item, index) => (
                       <div key={index} className="py-4 border-b flex items-center last:border-b-0">
@@ -423,7 +423,7 @@ const Landing = () => {
                 {
                   icon: Award,
                   title: "No Commitments",
-                  description: "Explore offers with no obligations. You're in complete control of your decisions."
+                  description: "Explore lender matches with no obligations. You're in complete control of your decisions."
                 }
               ].map((item, index) => (
                 <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-slate-200/50 bg-white/80 backdrop-blur-sm text-center p-8">
@@ -455,7 +455,7 @@ const Landing = () => {
                 {[
                   { stat: "4.9⭐", label: "User Rating" },
                   { stat: "$2,847", label: "Avg. Savings" },
-                  { stat: "2 min", label: "Approval Time" },
+                  { stat: "2 min", label: "Match Time" },
                   { stat: "50+", label: "Lender Partners" }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
@@ -473,7 +473,7 @@ const Landing = () => {
                   className="bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 text-xl px-12 py-4"
                   onClick={() => handleCTAClick('pricing_cta')}
                 >
-                  Start Your Free Pre-Approval
+                  Start Finding Lenders
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
               </Link>
@@ -568,7 +568,7 @@ const Landing = () => {
                   <span className="font-bold text-3xl">Qualifi AI</span>
                 </div>
                 <p className="text-slate-300 text-lg max-w-md leading-relaxed">
-                  AI-powered auto loan pre-approvals that connect borrowers to the best-fit lenders. 
+                  AI-powered auto loan matching that connects borrowers to the best-fit lenders. 
                   Smart matching, transparent rates, always free for borrowers.
                 </p>
                 
