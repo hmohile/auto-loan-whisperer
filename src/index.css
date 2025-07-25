@@ -260,7 +260,7 @@
   }
 
   .card-interactive {
-    @apply card-premium cursor-pointer hover:scale-[1.02] group;
+    @apply bg-gradient-to-br from-white to-slate-50 border border-slate-200/60 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 cursor-pointer hover:scale-[1.02] group;
   }
 
   .section-container {
